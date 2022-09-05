@@ -20,21 +20,28 @@ class Stack:
 
   def pop(self) -> None:
     # Write your code here
-    popnode = self.head
-    self.head = self.head.next
-    popnode.next = None
-    return popnode.data
+    if (self.head==None):
+      return "Stack is empty."
+    
+    else:  
+      popnode = self.head
+      self.head = self.head.next
+      popnode.next = None
+      return popnode.data
 
   def status(self):
     """
     It prints all the elements of stack.
     """
     # Write your code here 
-    iternode = self.head
-    while(iternode != None):
-      print(iternode.data, "->", end=" ")
-      iternode = iternode.next
-    return
+    if (self.head==None):
+      return "Stack is empty."
+    else:
+      iternode = self.head
+      while(iternode != None):
+        print(iternode.data, "->", end=" ")
+        iternode = iternode.next
+      return
 
 
 # Do not change the following code
