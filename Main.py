@@ -10,15 +10,34 @@ class Stack:
 
   def push(self, data) -> None:
     # Write your code here
+    if self.head == None:
+      self.head = Node(data)
+     
+    else:
+      newnode = Node(data)
+      newnode.next = self.head
+      self.head = newnode
 
   def pop(self) -> None:
     # Write your code here
+    popnode = self.head
+    self.head = self.head.next
+    popnode.next = None
+    return popnode.data
 
   def status(self):
     """
     It prints all the elements of stack.
     """
-    # Write your code here  
+    # Write your code here 
+    iternode = self.head
+    if self.isempty():
+      print("Stack Underflow")
+    else:
+      while(iternode != None):
+        print(iternode.data, "->", end=" ")
+        iternode = iternode.next
+      return
 
 
 # Do not change the following code
