@@ -31,13 +31,10 @@ class Stack:
     """
     # Write your code here 
     iternode = self.head
-    if self.isempty():
-      print("Stack Underflow")
-    else:
-      while(iternode != None):
-        print(iternode.data, "->", end=" ")
-        iternode = iternode.next
-      return
+    while(iternode != None):
+      print(iternode.data, "->", end=" ")
+      iternode = iternode.next
+    return
 
 
 # Do not change the following code
